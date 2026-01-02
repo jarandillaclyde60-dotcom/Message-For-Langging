@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="An interactive website with a clickable image that reveals a message.">
+    <title>Interactive Message For Langgings</title>
+    <style>
+        body{font-family:Arial,sans-serif;margin:20px;background:#FFD1DC;text-align:center} .container{max-width:600px;margin:0 auto;background:#FFB6C1;padding:20px;border-radius:8px;box-shadow:0 0 10px rgba(0,0,0,.1)} .interactive-img{max-width:100%;height:auto;cursor:pointer;border:2px solid #007bff;border-radius:8px;transition:transform .2s} .interactive-img:hover{transform:scale(1.05)} .message-overlay{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.7);justify-content:center;align-items:center;z-index:1000} .message-box{background:white;padding:20px;border-radius:8px;max-width:400px;text-align:center} .close-btn{background:#dc3545;color:white;border:none;padding:10px 20px;cursor:pointer;margin-top:10px;border-radius:4px} .close-btn:hover{background:#c82333}
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>Happy Birthday Langging!!</h1>
+    <p>Click the image below to reveal a message!</p>
+    <img id="interactiveImage" src="4d6ff6d0-1b6d-4b6d-96e1-d66ef3213f46.jpg" alt="Clickable image that reveals a message" class="interactive-img" loading="lazy" aria-label="Click to reveal message">
+</div>
+
+<div id="messageOverlay" class="message-overlay" role="dialog" aria-labelledby="messageTitle" aria-hidden="true">
+    <div class="message-box">
+        <h2 id="messageTitle">Message Revealed!</h2>
+        <p>Happy Birthday Woonggingg nakon!! 19 eun ikaw and akon nga wish kimo hay good health and stay yummy.Sorry kung taeagsa lata ako kimo mag gift and gabawi ako kimo makadang year and i super duper love you woonggingg nakon!!</p>
+        <button class="close-btn" id="closeBtn" aria-label="Close message">Close</button>
+    </div>
+</div>
+
+<script>
+    const img=document.getElementById('interactiveImage'),overlay=document.getElementById('messageOverlay'),closeBtn=document.getElementById('closeBtn');img.addEventListener('click',()=>overlay.style.display='flex');closeBtn.addEventListener('click',()=>overlay.style.display='none');overlay.addEventListener('click',e=>{if(e.target===overlay)overlay.style.display='none'});document.addEventListener('keydown',e=>{if(e.key==='Escape'&&overlay.style.display==='flex')overlay.style.display='none'});
+</script>
+</body>
+</html>
